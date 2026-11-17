@@ -41,8 +41,8 @@
       padding: 18px 12px;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 8px;
+      flex-wrap: nowrap;
+      gap: 5px;
     }
 
     a {
@@ -52,9 +52,9 @@
 
     
 nav a {
-  font-size: 14px;
-  font-weight: bold;
-  padding: 5px 9px;
+  font-size: clamp(9px, 2.7vw, 14px);
+padding: 5px 6px;
+white-space: nowrap;
   background: #D7BA8B;
   display: inline-block;
   transform: rotate(-2deg);
@@ -212,7 +212,7 @@ nav a:nth-child(4) {
       </div>
 
       <div class="note">
-        Some things i make and keep...
+        somethings i make and keep...
         <br>
         somethings i make and reluctantly gift...
         <br>
