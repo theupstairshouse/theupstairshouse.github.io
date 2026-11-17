@@ -5,23 +5,219 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Upstairs House</title>
+
   <style>
+    :root {
+      --cream: #E9D8C0;
+      --paper: #F8EEDC;
+      --olive: #555A3C;
+      --brown: #493025;
+      --pink: #B77F7D;
+      --burgundy: #672E38;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      background-color: #E9D8C0;
-      color: #493025;
-      font-family: Georgia, serif;
+      margin: 0;
+      background: var(--cream);
+      color: var(--brown);
+      font-family: "Courier New", monospace;
+      line-height: 1.6;
+    }
+
+    .stripes {
+      height: 25px;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--olive) 0 28px,
+        var(--pink) 28px 56px
+      );
+    }
+
+    nav {
+      background: var(--paper);
+      padding: 18px 12px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    a {
+      color: var(--brown);
+      text-decoration: none;
+    }
+
+    nav a {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    header {
+      padding: 45px 20px 25px;
       text-align: center;
-      padding: 60px 20px;
     }
 
     h1 {
-      color: #555A3C;
+      font-family: Georgia, serif;
+      font-size: clamp(38px, 8vw, 70px);
+      line-height: 1.1;
+      color: var(--olive);
+      margin: 0 0 18px;
+    }
+
+    .subtitle {
+      font-size: 17px;
+    }
+
+    main {
+      max-width: 1050px;
+      margin: auto;
+      padding: 25px 22px 65px;
+    }
+
+    .scrapbook {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .photo {
+      background: #fffaf1;
+      padding: 13px 13px 35px;
+      box-shadow: 5px 7px 15px #49302533;
+      transform: rotate(-2deg);
+      position: relative;
+    }
+
+    .photo::before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 27px;
+      background: #B99756AA;
+      top: -12px;
+      left: 35%;
+      transform: rotate(5deg);
+    }
+
+    .photo img {
+      width: 100%;
+      display: block;
+    }
+
+    .note {
+      background: var(--paper);
+      padding: 30px;
+      box-shadow: 4px 5px 10px #49302522;
+      transform: rotate(2deg);
+      font-size: 20px;
+    }
+
+    .note span {
+      color: var(--burgundy);
+      font-size: 30px;
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 65px;
+    }
+
+    .links a {
+      padding: 23px 12px;
+      text-align: center;
+      font-weight: bold;
+      background: var(--pink);
+      border: 2px dashed var(--paper);
+      font-size: 16px;
+    }
+
+    .links a:nth-child(2) {
+      background: #85865C;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 650px) {
+      .scrapbook {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .note {
+        font-size: 18px;
+      }
+
+      .links {
+        grid-template-columns: 1fr;
+        margin-top: 45px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <h1>The Upstairs House</h1>
-  <p>Ceramics and other things I've made.</p>
-  <p>A little website is taking shape.</p>
+  <div class="stripes"></div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#made">Things I've Made</a>
+    <a href="#shop">Shop</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <header id="home">
+    <h1>The Upstairs House</h1>
+    <p class="subtitle">
+      Ceramics and other things I've made.
+    </p>
+  </header>
+
+  <main>
+    <section class="scrapbook">
+      <div class="photo">
+        <img src="pottery.jpg"
+             alt="Handmade ceramics by The Upstairs House">
+      </div>
+
+      <div class="note">
+        A place for pottery,
+        peculiar ideas and whatever
+        I fancy making next.
+        <br><span>♡</span>
+      </div>
+    </section>
+
+    <section class="links">
+      <a id="made" href="#made">
+        Things I've Made ↗
+      </a>
+
+      <a id="shop" href="#shop">
+        Shop ↗
+      </a>
+
+      <a id="about" href="#about">
+        About ↗
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    Curiously made. ♡
+    <br>
+    The Upstairs House
+  </footer>
+
+  <div class="stripes"></div>
 </body>
 </html>
