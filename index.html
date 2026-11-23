@@ -43,29 +43,8 @@
       text-decoration: none;
     }
 
-    nav {
-      background: var(--paper);
-      padding: 18px 12px;
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-    }
-
-    nav a {
-      font-size: clamp(11px, 2.7vw, 14px);
-      padding: 6px 10px;
-      white-space: nowrap;
-      background: #C99B9A;
-      transform: rotate(-2deg);
-    }
-
-    nav a:nth-child(2) {
-      background: #A8AD83;
-      transform: rotate(2deg);
-    }
-
     header {
-      padding: 45px 20px 20px;
+      padding: 55px 20px 20px;
       text-align: center;
     }
 
@@ -103,6 +82,32 @@
       font-size: 13px;
       margin-top: 15px;
       color: var(--olive);
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 22px 0 0;
+    }
+
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brown);
+      transition: transform 0.2s;
+    }
+
+    .social-icons a:hover {
+      transform: rotate(-8deg) scale(1.1);
+    }
+
+    .social-icons svg {
+      width: 27px;
+      height: 27px;
+      display: block;
     }
 
     main {
@@ -170,35 +175,9 @@
       font-size: 13px;
     }
 
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 30px;
-      margin: 20px 0 25px;
-    }
-
-    .social-icons a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--brown);
-      transition: transform 0.2s;
-    }
-
-    .social-icons a:hover {
-      transform: rotate(-8deg) scale(1.1);
-    }
-
-    .social-icons svg {
-      width: 27px;
-      height: 27px;
-      display: block;
-    }
-
     @media (max-width: 650px) {
       header {
-        padding-top: 35px;
+        padding-top: 40px;
       }
 
       .shop-button {
@@ -217,11 +196,6 @@
 
   <div class="stripes"></div>
 
-  <nav>
-    <a href="made.html">Things I've Made</a>
-    <a href="about.html">About</a>
-  </nav>
-
   <header>
     <h1>The Upstairs House</h1>
 
@@ -237,21 +211,6 @@
     <p class="delivery-note">
       ✳ Free UK delivery · UK orders only ✳
     </p>
-  </header>
-
-  <main>
-    <div class="photo">
-      <img src="IMG-20240628-WA0019.jpg"
-           alt="Handmade ceramics by The Upstairs House">
-    </div>
-
-    <p class="little-note">
-      Small batches. One-offs. Made by me.
-    </p>
-  </main>
-
-  <footer>
-    <p>find me elsewhere...</p>
 
     <div class="social-icons">
 
@@ -294,7 +253,20 @@
       </a>
 
     </div>
+  </header>
 
+  <main>
+    <div class="photo">
+      <img src="IMG-20240628-WA0019.jpg"
+           alt="Handmade ceramics by The Upstairs House">
+    </div>
+
+    <p class="little-note">
+      Small batches. One-offs. Made by me.
+    </p>
+  </main>
+
+  <footer>
     ✌🏻
     <br>
     The Upstairs House
