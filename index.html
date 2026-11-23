@@ -120,16 +120,37 @@ nav a:nth-child(4) {
 }
 
 
-    .photo::before {
-      content: "";
-      position: absolute;
-      width: 100px;
-      height: 27px;
-      background: #B99756AA;
-      top: -12px;
-      left: 35%;
-      transform: rotate(5deg);
-    }
+    
+.photo::before {
+  content: "";
+  position: absolute;
+  width: 105px;
+  height: 30px;
+  top: -13px;
+  left: 50%;
+  z-index: 2;
+
+  transform: translateX(-50%) rotate(4deg);
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      rgba(255,255,255,0.09) 2px,
+      transparent 4px
+    ),
+    rgba(184, 151, 91, 0.60);
+
+  backdrop-filter: blur(1px);
+
+  clip-path: polygon(
+    0% 3%, 100% 0%,
+    98% 100%, 2% 97%
+  );
+
+  box-shadow: 1px 2px 3px rgba(73,48,37,0.12);
+}
+
 
     .photo img {
       width: 100%;
