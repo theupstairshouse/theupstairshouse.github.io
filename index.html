@@ -17,7 +17,9 @@
       --burgundy: #672E38;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -36,41 +38,34 @@
       );
     }
 
-    nav {
-      background: var(--paper);
-      padding: 18px 12px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: nowrap;
-      gap: 5px;
-    }
-
     a {
       color: var(--brown);
       text-decoration: none;
     }
 
+    nav {
+      background: var(--paper);
+      padding: 18px 12px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
     nav a {
-      font-size: clamp(9px, 2.7vw, 14px);
-      padding: 5px 6px;
+      font-size: clamp(11px, 2.7vw, 14px);
+      padding: 6px 10px;
       white-space: nowrap;
-      background: #D7BA8B;
-      display: inline-block;
+      background: #C99B9A;
       transform: rotate(-2deg);
     }
 
     nav a:nth-child(2) {
-      background: #C99B9A;
+      background: #A8AD83;
       transform: rotate(2deg);
     }
 
-    nav a:nth-child(3) {
-      background: #A8AD83;
-      transform: rotate(-2deg);
-    }
-
     header {
-      padding: 45px 20px 25px;
+      padding: 45px 20px 20px;
       text-align: center;
     }
 
@@ -84,19 +79,30 @@
 
     .subtitle {
       font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    .shop-button {
+      display: inline-block;
+      background: var(--pink);
+      color: var(--brown);
+      padding: 16px 38px;
+      font-size: 20px;
+      font-weight: bold;
+      border: 2px dashed var(--paper);
+      transform: rotate(-2deg);
+      box-shadow: 4px 5px 0px #49302522;
+      transition: transform 0.2s;
+    }
+
+    .shop-button:hover {
+      transform: rotate(0deg) scale(1.03);
     }
 
     main {
-      max-width: 1050px;
+      max-width: 650px;
       margin: auto;
-      padding: 25px 22px 65px;
-    }
-
-    .scrapbook {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 35px;
-      align-items: center;
+      padding: 25px 22px 50px;
     }
 
     .photo {
@@ -146,37 +152,10 @@
       display: block;
     }
 
-    .note {
-      background: var(--paper);
-      padding: 30px;
-      box-shadow: 4px 5px 10px #49302522;
-      transform: rotate(2deg);
-      font-size: 16px;
-    }
-
-    .note span {
-      color: var(--burgundy);
-      font-size: 30px;
-    }
-
-    .links {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      margin-top: 65px;
-    }
-
-    .links a {
-      padding: 23px 12px;
+    .little-note {
       text-align: center;
-      font-weight: bold;
-      background: var(--pink);
-      border: 2px dashed var(--paper);
-      font-size: 16px;
-    }
-
-    .links a:nth-child(2) {
-      background: #85865C;
+      margin-top: 45px;
+      font-size: 14px;
     }
 
     footer {
@@ -191,69 +170,53 @@
     }
 
     @media (max-width: 650px) {
-      .scrapbook {
-        grid-template-columns: 1fr;
-        gap: 35px;
+      header {
+        padding-top: 35px;
       }
 
-      .note {
-        font-size: 12px;
+      .shop-button {
+        font-size: 18px;
+        padding: 15px 28px;
       }
 
-      .links {
-        grid-template-columns: 1fr;
-        margin-top: 45px;
+      main {
+        padding-top: 35px;
       }
     }
   </style>
 </head>
 
 <body>
+
   <div class="stripes"></div>
 
   <nav>
-    <a href="https://shop.theupstairshouse.co.uk">Shop</a>
     <a href="made.html">Things I've Made</a>
     <a href="about.html">About</a>
   </nav>
 
-  <header id="home">
+  <header>
     <h1>The Upstairs House</h1>
+
     <p class="subtitle">
-      Ceramics and other things I've made.
+      Handmade ceramics.
     </p>
+
+    <a class="shop-button"
+       href="https://shop.theupstairshouse.co.uk">
+      SHOP MY MAKES ↗
+    </a>
   </header>
 
   <main>
-    <section class="scrapbook">
-      <div class="photo">
-        <img src="IMG-20240628-WA0019.jpg"
-             alt="Handmade ceramics by The Upstairs House">
-      </div>
+    <div class="photo">
+      <img src="IMG-20240628-WA0019.jpg"
+           alt="Handmade ceramics by The Upstairs House">
+    </div>
 
-      <div class="note">
-        somethings i make to keep...
-        <br>
-        somethings i make to gift...
-        <br>
-        somethings i might even sell...
-        <br><span></span>
-      </div>
-    </section>
-
-    <section class="links">
-      <a href="https://shop.theupstairshouse.co.uk">
-        Shop ↗
-      </a>
-
-      <a href="made.html">
-        Things I've Made ↗
-      </a>
-
-      <a href="about.html">
-        About ↗
-      </a>
-    </section>
+    <p class="little-note">
+      Small batches. One-offs. Made by me.
+    </p>
   </main>
 
   <footer>
@@ -278,5 +241,6 @@
   </footer>
 
   <div class="stripes"></div>
+
 </body>
 </html>
